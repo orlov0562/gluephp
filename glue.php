@@ -45,7 +45,8 @@
 
             $method = strtoupper($_SERVER['REQUEST_METHOD']);
             $path = $_SERVER['REQUEST_URI'];
-
+            if ($pos_get = strpos($path, '?')) $path = substr($path, 0, $pos_get);
+            
             $found = false;
 
             krsort($urls);
